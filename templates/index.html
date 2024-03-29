@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Tampering Detection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Document Tampering Detection</h1>
+        <p>Select the original and tampered images to detect document tampering.</p>
+        <form id="uploadForm" action="/analyze" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="originalImage">Select Original Image:</label>
+                <input type="file" class="form-control-file" id="originalImage" name="originalImage" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="tamperedImage">Select Tampered Image:</label>
+                <input type="file" class="form-control-file" id="tamperedImage" name="tamperedImage" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="result" style="display: none;">
+            <h3>Result</h3>
+            <div class="alert" role="alert" id="resultAlert"></div>
+            <p>SSIM Score: <span id="ssimScore"></span></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,5 +1,7 @@
 # Document Tampering Detection
 
+![App Screenshot](https://png.pngtree.com/png-vector/20220519/ourmid/pngtree-business-documents-scanning-market-analysis-png-image_4711698.png)
+
 Document Tampering Detection is a web application that allows users to detect whether a document has been tampered with by comparing the original and tampered images.
 
 ## Overview
